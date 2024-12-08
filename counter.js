@@ -125,30 +125,6 @@ function updateQueueDisplay(counterNumber, queueDisplayElement, currentTransacti
   });
 }
 
-function resetCounterIfNeeded() {
-  const currentDate = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
-  const lastResetRef = database.ref('lastResetDate');
-  const counterRef = database.ref('queueCounter');
-
-  lastResetRef.once('value').then(function(snapshot) {
-      const lastResetDate = snapshot.exists() ? snapshot.val() : null;
-
-      // If the date has changed, reset the counter
-      if (lastResetDate !== currentDate) {
-          counterRef.set(0); // Reset the counter to 0
-          lastResetRef.set(currentDate); // Update the last reset date
-          console.log('Counter reset for the new day!');
-      } else {
-          console.log('No reset needed. Counter is up to date.');
-      }
-  }).catch(function(error) {
-      console.error('Error checking or resetting the counter:', error);
-  });
-}
-
-// Run the function when the website loads
-resetCounterIfNeeded();
-
 // Event listeners for buttons
 const addToQueueButton = document.getElementById('addToQueue');
 const nextInQueueButton = document.getElementById('nextInQueue');
