@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School Registrar Queue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>School Registrar Queue</h1>
+
+  <div>
+    <label for="counterSelect">Select Counter:</label>
+    <select id="counterSelect">
+      <option value="1">Counter 1</option>
+      <option value="2">Counter 2</option>
+      <option value="3">Counter 3</option>
+      <option value="4">Counter 4</option>
+      <option value="5">Counter 5</option>
+      <option value="6">Counter 6</option>
+      <option value="7">Counter 7</option>
+      <option value="8">Counter 8</option>
+      <option value="9">Counter 9</option>
+      <option value="10">Counter 10</option>
+      <option value="11">Counter 11</option>
+      <option value="12">Counter 12</option>
+      <option value="14">Counter 14</option>
+      <option value="15">Counter 15</option>
+      <option value="16">Counter 16</option>
+    </select>
+  </div>
+
+  <button id="addToQueue">Add to Queue</button>
+  <button id="nextInQueue">Next in Queue</button>
+
+  <h2>Current Transaction:</h2>
+  <div id="currentTransaction"></div>
+
+  <h2>Next in Queue:</h2>
+  <div id="queueDisplay"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="counter.js"></script>  
+</body>
+</html>
